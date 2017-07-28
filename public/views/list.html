@@ -1,0 +1,9 @@
+<ul>
+	<li ng-repeat="hero in heroes">
+		<a ng-href="#!/detail/{{hero.id}}"><img ng-src="{{hero.src}}"></a>
+		<h3>{{hero.name}}</h3>
+		<p>Q币价:{{hero.qb}}Q币</p>
+		<p>微信价:￥{{hero.rmb}}</p>
+		<button ng-click="buy(hero)">立即购买</button>
+	</li>
+</ul>

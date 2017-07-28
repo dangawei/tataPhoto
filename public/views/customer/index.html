@@ -1,0 +1,140 @@
+<div class="comment" >
+    <style>
+        /**请求数据，评论***************************************************************/
+        .customer_Prise .comment{
+            border-left:3px solid #fdfdfd;
+            border-right:3px solid #fdfdfd;
+            width: 100%;
+            padding:2px 20px 0px 20px;
+        }
+        .customer_Prise  .comment div.head-img,.comment div.com-content{
+            float: left;
+        }
+        div.head-img img{
+            margin-right:18px;
+            width: 70px;
+            height:70px;
+            border-radius: 6px;
+        }
+        .customer_Prise .comment div.com-content{
+            width: 800px;
+            height: 316px;
+            position: relative;
+        }
+        .customer_Prise .comment div.com-content ul li{
+            float: left;
+            margin-right:10px;
+        }
+        .customer_Prise .comment div.com-content p{
+            font-size:15px;
+        }
+        .customer_Prise .comment div.com-content p.com-name{
+            width: 100%;
+            height: 34px;
+            background: #f3f3f3;
+            line-height: 34px;
+            color:#c2c3e7;
+            text-indent: 1em;
+            letter-spacing:3px;
+            margin-bottom: 10px;
+        }
+        .customer_Prise .comment div.com-content>p:nth-child(2) span{
+            display: inline-block;
+            width: 100px;
+            margin-right:18px;
+        }
+        .customer_Prise .comment div.com-content>p:nth-child(3){
+            margin-bottom:16px;
+        }
+        .customer_Prise .comment div.com-content ul li img{
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .customer_Prise .comment div.com-content>p.time-price{
+            position: absolute;
+            bottom:-2px;
+            color:#9d9d9d;
+        }
+        .customer_Prise .comment div.com-content>p.time-price span{
+            margin-right: 16px;
+        }
+        font{
+            color:#ff0800;
+        }
+        .cur{
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            opacity: 1 !important;
+            z-index: 999;
+        }
+        .button{
+            width: 100px;
+            height: 20px;
+            margin:0 auto;
+        }
+        .button span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            color:orchid;
+            background: yellow;
+            text-align: center;
+            cursor: pointer;
+
+        }
+        .button span:not(:last-child){
+            margin-right: 20px;
+        }
+        .plusmore{
+            width: 260px;
+            height: 22px;
+            background-color: orange;
+            color: whitesmoke;
+            font-weight: bold;
+            text-align: center;
+            line-height: 22px;
+            border-radius: 6px;
+            margin:0 auto;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+    <div class="customer_Prise" ng-app="myApp" ng-controller="myCtrl" ng-repeat="dz in dazhong">
+        <div class="head-img">
+            <img src='\{{dz.head}}' alt="">
+        </div>
+        <div class="com-content">
+            <p class="com-name"><span>{{dz.name}}</span></p>
+            <p><span class="sheying">摄影: <font>{{dz.sheying}}</font></span><span class="zaoxing">造型:<font>{{dz.zaoxing}}</font></span><span class="fuwu">服务:<font>{{dz.fuwu}}</font></span></p>
+            <p com-inner>{{dz.coment}}</p>
+            <div class="imglist" ng-repeat="img in dz.imglist">
+                <ul style="list-style: none">
+                    <li><img src="\{{img.src}}" alt=""  ng-click="showBig($event)" class="img"></li>
+                </ul>
+            </div>
+            <p class="time-price"><span class="price">套餐价格：{{dz.price}}</span><span class="time">时间:{{dz.time}} 他她摄影机构</span></p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <p ng-click="showMore($event)" class="plusmore">加载更多</p>
+    <div class="customer_Prise more1" ng-app="myApp" ng-controller="myCtrl" ng-repeat="dz2 in dazhong2" style="display: none">
+        <div class="head-img">
+            <img src='\{{dz2.head}}' alt="">
+        </div>
+        <div class="com-content">
+            <p class="com-name"><span>{{dz2.name}}</span></p>
+            <p><span class="sheying">摄影: <font>{{dz2.sheying}}</font></span><span class="zaoxing">造型:<font>{{dz2.zaoxing}}</font></span><span class="fuwu">服务:<font>{{dz2.fuwu}}</font></span></p>
+            <p com-inner>{{dz2.coment}}</p>
+            <div class="imglist" ng-repeat="img in dz2.imglist">
+                <ul style="list-style: none">
+                    <li><img src="\{{img.src}}" alt=""  ng-click="showBig($event)" class="img"></li>
+                </ul>
+            </div>
+            <p class="time-price"><span class="price">套餐价格：{{dz2.price}}</span><span class="time">时间:{{dz2.time}} 他她摄影机构</span></p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>

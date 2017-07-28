@@ -1,0 +1,114 @@
+
+div.container{
+    width: 1004px;
+}
+.top{
+    width: 1004px;
+    margin:50px auto;
+    text-align: center;
+}
+.top img{
+    width: 462px;
+    height: 45px;
+}
+.center{
+    width: 1004px;
+    overflow: hidden;
+}
+.center img{
+    width: 300px;
+    height: 300px;
+}
+.center span{
+    float: left;
+    display: inline-block;
+    width: 502px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.center span p{
+    position: absolute;
+    width: 140px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    margin-left:-60px;
+    margin-top:-30px;
+    padding:5px;
+    background-color: rgba(242,242,242,0.8);
+}
+.center span p a{
+    color: #111;
+    display: block;
+    width: 130px;
+    height: 50px;
+    text-align:center;
+    line-height:50px;
+    border:1px solid #000;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+div.bottom{
+    padding-top: 40px;
+    width: 1004px;
+}
+
+
+.container .bottom ul{
+    list-style-type:none;
+    width: 1004px;
+    margin:40px auto;
+}
+.container .bottom li{
+    height: 300px;
+    width: 300px;
+    float: left;
+    position: relative;
+    margin-top:30px;
+    cursor: pointer;
+    margin-bottom:120px;
+    margin-right:33px;
+}
+.container .bottom li>div{
+    height: 300px;
+    width: 300px;
+    background: url('/images/works/ablmty.png') no-repeat;
+    margin-left:-16px;
+}
+.container .bottom li img {
+    margin-left: 24px;
+    margin-top: 23px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+.container .bottom li p{
+    width: 270px;
+    height: 76px;
+    background: url("/images/enjoy/3.gif") no-repeat bottom center;
+    text-align: center;
+}
+.container .bottom li span{
+    display: inline-block;
+    margin-top:10px;
+    font-size:16px;
+    width: 140px;
+    height: 36px;
+    background-color: #f7dcdc;
+    color: #6f6e7f;
+    line-height:36px;
+    opacity:1;
+    transition: all 1s ease 0s ;
+}
+.container .bottom li:hover span{
+    color: #fff;
+    background-color: #666;
+    opacity:0.4;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link href="/stylesheet/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheet/style.css' />
+    <!--<script src="/js/jquery.min.js"></script>-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/velocity.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheet/style.css' />
+    <link rel="stylesheet" href="/stylesheet/bootstrap.min.css">
+    <!--<link type="text/css" href="/stylesheet/consult.css">-->
+</head>
+<body>
+<header class="layout">
+    <div class="h-tu">
+        <a href="http://weibo.com/p/1006062831754325/home?from=page_100606&mod=TAB" title="官方微博"><div class="h-weibo"></div>WEIBO</a>
+        <a href="http://www.lytata.com/Index/WeiXin" title="关注微信"><div class="h-weixin"></div>WECHAT</a>
+        <a href="http://shang.qq.com/open_webaio.html?sigt=ece5b67bb74630498a4c298248cf78ed46076ade329fdfb1319772e6db4b51f8d62712eac96b84f0d91755c5e3fc9d2e&sigu=eae1f41801109e5c55b848cd2a801450228c543c31a4861afb8d7f7f5b9499a9081dacef4f2f6693&tuin=800168025" title="QQ800168025"> <div class="h-qq"></div>QQ</a>
+
+        <span class="h-tel">400-0520-356</span>
+    </div>
+</header>
+<nav class="layout" id="layout">
+    <div class="nav">
+        <div class="tata-logo">
+            <img src="images/layout/logo.gif" alt="">
+        </div>
+        <div class="navlist">
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li id="l_pin"><a href="story_ContactUs">品牌故事</a>
+                    <div id="pin_story">
+                        <div><a href="story_ContactUs">关于我们</a></div>
+                        <div><a href="story_AboutUs">联系我们</a></div>
+                    </div>
+                </li>
+                <li id="l_new"><a href="#">最新活动</a>
+                    <div id="new_activy">
+                        <div><a href="#">优惠活动</a></div>
+                        <div><a href="#">新闻公告</a></div>
+                    </div>
+                </li>
+                <li><a href="works">最新作品</a></li>
+                <li id="l_ke"><a href="enjoy">客片欣赏</a>
+                    <div id="kepian">
+                        <div><a href="#" class="b1">婚纱客片</a></div>
+                        <div><a href="#" class="b2">写真客片</a></div>
+                        <div><a href="#" class="b3">闺蜜照</a></div>
+                        <div><a href="#" class="b4">孕妇亲子照</a></div>
+                    </div>
+                </li>
+                <li id="l_huan"><a href="theEarth">环球巡拍</a>
+                    <div id="huanqiu">
+                        <div><a href="#" class="a1">国内线</a></div>
+                        <div><a href="#" class="a2">海外线</a></div>
+                    </div>
+                </li>
+                <li><a href="video">视频特辑</a></li>
+                <li><a href="customer_Prise">客户好评</a></li>
+                <li><a href="help">帮助中心</a></li>
+            </ul>
+            <script>
+                function showAndhides(outId,inId) {
+                    $(outId).mouseenter(function(){
+                        $(inId).show();
+                    });
+                    $(outId).mouseleave(function(){
+                        $(inId).hide();
+                    });
+                }
+                showAndhides('#l_pin','#pin_story');
+                showAndhides('#l_new','#new_activy');
+                showAndhides('#l_ke','#kepian');
+                showAndhides('#l_huan','#huanqiu');
+            </script>
+        </div>
+        <div class="bg"></div>
+    </div>
+</nav>
+
+
+
+{{{body}}}
+<aside>
+    <style>
+        .izl-rmenu{
+            margin-right: 0;
+            width: 82px;
+            position: fixed;
+            right: 2px;
+            top: 65%;
+            -webkit-box-shadow: #DDD 0px 1px 5px;
+            -moz-box-shadow: #DDD 0px 1px 5px;
+            box-shadow: #DDD 0px 1px 5px;
+            z-index:999;
+        }
+        .izl-rmenu .consult{
+            background-image: url(/images/consult/consult_icon.gif);
+            background-repeat: no-repeat;
+            background-position: center -77px;
+            display: block;
+            height: 76px;
+            width: 82px;
+        }
+        .izl-rmenu .consult .phone {
+            background-color: rgb(247,247,255);
+            position: absolute;
+            width: 160px;
+            left: -160px;
+            top: 0px;
+            line-height: 73px;
+            color: #000;
+            font-size: 18px;
+            text-align: center;
+            display: none;
+            box-shadow: #DDD -1px 1px 4px;
+        }
+        .izl-rmenu a.consult:hover .phone{display:inline !important;}
+        .izl-rmenu .cart {
+            background-image: url(/images/consult/consult_icon.gif);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            display: block;
+            height: 16px;
+            width: 16px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #45BDFF;
+            text-align: center;
+            padding-top: 15px;
+            padding-right: 18px;
+            padding-bottom: 47px;
+            padding-left: 48px;
+        }
+        .izl-rmenu a.cart:hover .pic{display:block;}
+        .izl-rmenu .btn_top {
+            background-image: url(/images/consult/float_top.gif);
+            background-repeat: no-repeat;
+            background-position: center top;
+            display: block;
+            height: 39px;
+            width: 82px;
+            -webkit-transition: all 0s ease-in-out;
+            -moz-transition: all 0s ease-in-out;
+            -o-transition: all 0s ease-in-out;
+            transition: all 0s ease-in-out;
+        }
+        .izl-rmenu .btn_top:hover {
+            background-image: url(/images/consult/float_top.gif);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+        .izl-rmenu .cart .pic {
+            display:none;
+            position: absolute;
+            left: -160px;
+            top: 65px;
+            width: 160px;
+            height: 160px;
+            background:url(/images/consult/weixin.jpg);
+        }
+        #udesk-feedback-tab {
+            position: fixed;
+            right: 2px;
+            top: 65%;
+            margin-top: -76px;
+            -webkit-box-shadow: #DDD 0px -1px 5px;
+            -moz-box-shadow: #DDD 0px -1px 5px;
+            box-shadow: #DDD 0px -1px 5px;
+            z-index: 10000;
+            cursor: pointer;
+            background-image: url(/images/consult/consult_icon.gif);
+            background-repeat: no-repeat;
+            background-position: center top;
+            display: block;
+            height: 76px;
+            width: 82px;
+            background-color: #FFF!important;
+            z-index:999;
+        }
+    </style>
+    <div class="izl-rmenu">
+        <a class="consult" target="_blank"><div class="phone" style="display:none;">0592-1234567</div></a>
+        <a class="cart"><div class="pic"></div></a>
+        <a href="javascript:void(0)" class="btn_top" style="display: block;"></a>
+    </div>
+    <a target="_blank"  href="http://wpa.qq.com/msgrd?v=3&uin=123456&site=qq&menu=yes" id="udesk-feedback-tab" class="udesk-feedback-tab-left" style="display: block; background-color: black;"></a>
+    <script>
+        /*---------返回顶部----------*/
+            $(".btn_top").hide();
+            console.log(1);
+            $(".btn_top").on("click",function(){
+                $('html, body').animate({scrollTop: 0},300);
+                return false;
+            })
+            $(window).bind('scroll resize',function(){
+                if($(window).scrollTop()<=300){
+                    $(".btn_top").hide();
+                }else{
+                    $(".btn_top").show();
+                }
+            })
+
+        /*---------返回顶部 end----------*/
+    </script>
+</aside>
+<footer class="layout">
+    <div class="f-top">
+        <div class="f-contant">
+            <div class="b1 b"></div><div class="b2 b"></div><div class="b3 b"></div><div class="b4 b"></div>
+            <a href="#top" class="gotop">
+                <img src="/images/layout/Go_top.png" alt="">
+            </a>
+            <p class="f-tel gotop">
+                <img src="images/layout/Section5_05.png" alt="">
+            </p>
+            <div class="f-content">
+                <div class="left">
+                    <img src="/images/layout/Gifts.png" alt="">
+                </div>
+                <div class="right">
+                    <p class="tip">为了确保您及时收到信息，请务必保持手机畅通，我们将在第一时间与您联系！</p>
+                    <from>
+                        <p>姓名：<input type="text"></p>
+                        <p>手机：<input type="password"></p>
+                        <button></button>
+                    </from>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="f-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 left">
+                   <!-- 左边 -->
+                    <img class="title" src="/images/layout/contact_us.png" alt="">
+                    <p class="tel">400-520-356</p>
+                    <div class="dizhi">
+                        <p>旗舰店：洛阳市涧西区辽宁路华阳商铺2期115-116号</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总　店：洛阳市涧西区万达广场室外步行街3楼16-19号</p>
+                    </div>
+                    <div class="icon">
+                        <a href="http://www.lytata.com/index/weixin" title="在线微信">
+                            <img src="/images/layout/bottom_mid_weixin.png" alt="">
+                        </a>
+                        <a href="http://weibo.com/p/1006062831754325/home?from=page_100606&mod=TAB#place" title="官方微博">
+                            <img src="/images/layout/bottom_mid_weibo.png" alt="">
+                        </a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=800168025&site=qq&menu=yes" title="在线QQ">
+                            <img src="/images/layout/bottom_mid_qq.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 right">
+                    <!-- 右边 -->
+                    <img src="/images/layout/public_platform.png" alt="" class="title">
+                    <div class="erweima">
+                        <img src="/images/layout/codeweb.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">
+                ©2014-2015
+                <img src="/images/layout/Section6_05.gif" alt="">
+                洛阳市涧西区他她摄影工作室 all rights reserved&nbsp;&nbsp;豫ICP备15018251号-1
+            </p>
+            <div class="fridendlink">
+                友情链接：<a href="http://www.lytata.com/" title="洛阳婚纱摄影">洛阳婚纱摄影</a>
+                <a href="http://baike.wed114.cn/" title="婚嫁百科">婚嫁百科</a>
+                <a href="http://weibo.com/p/1006062831754325/home?from=page_100606&mod=TAB#place" title="洛阳他她摄影官方微博">洛阳他她摄影官方微博</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+

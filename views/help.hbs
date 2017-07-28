@@ -1,0 +1,136 @@
+<style>
+    .customer_Prise{
+        width:1004px;
+        margin:10px auto;
+        text-align: center;
+        /*background: #a6e1ec;*/
+    }
+    .customer_Prise .cus-img{
+        width: 665px;
+        margin:40px auto;
+    }
+    .customer_Prise .cus-a{
+        width: 90%;
+        height: 60px;
+        line-height:86px;
+        margin:30px auto;
+        /*background: pink;*/
+    }
+    .customer_Prise .cus-a>div{
+        float: left;
+        text-align: center;
+        /*background:#00B7FF;*/
+        width: 90px;
+        height: 100%;
+        margin-left: 10px;
+        border-bottom:2px solid #e4cfcf;
+    }
+    .customer_Prise .cus-a>div:not(:last-child){
+        margin-right:96px;
+    }
+    .customer_Prise .cus-a a{
+        font-size:20px;
+        text-decoration: none;
+        color: rgba(0,0,0,0.6);
+        position: relative;
+    }
+    .customer_Prise .cus-a a:hover{
+        color:#e4cfcf;
+    }
+    .customer_Prise .cus-a a::before{
+        content:'{';
+        position: absolute;
+        left:-24px;
+        font-size:38px;
+        color:#e4cfcf;
+        font-weight: 100;
+    }
+    .customer_Prise .cus-a a::after{
+        content:'}';
+        position: absolute;
+        right:-24px;
+        font-size:38px;
+        color:#e4cfcf;
+    }
+    .customer_Prise .hurt{
+        width: 120px;
+        position: relative;
+        margin:60px auto 58px;
+    }
+    .customer_Prise .hurt::before{
+        content:'';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url("/images/customer/Section11_03.gif" ) no-repeat;
+        position: absolute;
+        top:3px;
+        left:-15px;
+    }
+    .customer_Prise .hurt::after{
+        content:'';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url("/images/customer/Section11_03.gif" ) no-repeat;
+        position: absolute;
+        right:-15px;
+        top:3px;
+    }
+    .comment{
+        /*background-color: pink;*/
+        width:100%;
+        height:auto;
+    }
+</style>
+<div class="customer_Prise" ng-app="myApp">
+    <div class="cus-img">
+        <img src="/images/help/Section15.gif" alt="">
+    </div>
+   <div ng-controller="myCtrl">
+       <div class="cus-a">
+           <div ng-repeat="information in informationList">
+               <a ng-href="\{{information.href}}" ng-click="selectName(information.name)" ng-moduel="information.name">\{{information.name}}</a>
+           </div>
+       </div>
+       <div class="hurt"><p style="font-size:19px;color: rgba(0,0,0,0.6);">\{{name}}</p></div>
+       <div class="comment">
+
+       </div>
+       <div class="comment">
+            <div ng-view></div>
+       </div>
+   </div>
+</div>
+<script src="/js/angular.min.js"></script>
+<script src="/js/angular-route.min.js"></script>
+<script>
+    var app = angular.module('myApp',['ngRoute']);
+    app.controller('myCtrl',function($scope){
+        $scope.name = "预约流程";
+        $scope.informationList = [
+            {name:'预约流程',href:'#!/'},
+            {name:'拍摄细节',href:'#!/details'},
+            {name:'外地专享',href:'#!/exclusive'},
+            {name:'付款方式',href:'#!/apply'},
+            {name:'求才若渴',href:'#!/invite'},
+        ];
+        $scope.selectName = function(name){
+            console.log(name);
+            $scope.name = name;
+        }
+    });
+    app.config(function($routeProvider){
+        $routeProvider.when('/',{
+            templateUrl:'/views/help/index.html',
+        }).when('/details',{
+            templateUrl:'/views/help/details.html',
+        }).when('/exclusive',{
+            templateUrl:'/views/help/exclusive.html',
+        }).when('/apply',{
+            templateUrl:'/views/help/apply.html',
+        }).when('/invite',{
+            templateUrl:'/views/help/invite.html',
+        })
+    })
+</script>

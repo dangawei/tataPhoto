@@ -1,0 +1,211 @@
+<style>
+    .customer_Prise{
+        width:1004px;
+        margin:10px auto;
+        /*background: #a6e1ec;*/
+    }
+    .customer_Prise .cus-img{
+        width: 665px;
+        margin:40px auto;
+    }
+    .customer_Prise .cus-a{
+        width: 492px;
+        height: 60px;
+        line-height:86px;
+        /*background:#00B7FF;*/
+        margin:60px auto;
+    }
+    .customer_Prise .cus-a>div{
+        float: left;
+        text-align: center;
+        width: 90px;
+        height: 100%;
+    }
+    .customer_Prise .cus-a>div:not(:last-child){
+        margin-right:96px;
+    }
+    .customer_Prise .cus-a a{
+        font-size:20px;
+        text-decoration: none;
+        color: rgba(0,0,0,0.6);
+        position: relative;
+    }
+    .customer_Prise .cus-a a:hover{
+        color:#e4cfcf;
+    }
+    .customer_Prise .cus-a a::before{
+        content:'{';
+        position: absolute;
+        left:-24px;
+        font-size:38px;
+        color:#e4cfcf;
+        font-weight: 100;
+    }
+    .customer_Prise .cus-a a::after{
+        content:'}';
+        position: absolute;
+        right:-24px;
+        font-size:38px;
+        color:#e4cfcf;
+    }
+    .customer_Prise .hurt{
+        width: 120px;
+        position: relative;
+        margin:-10px auto 58px;
+    }
+    .customer_Prise .hurt::before{
+        content:'';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url("/images/customer/Section11_03.gif") no-repeat;
+        position: absolute;
+        top:3px;
+        left:-32px;
+    }
+    .customer_Prise .hurt::after{
+        content:'';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url("/images/customer/Section11_03.gif" ) no-repeat;
+        position: absolute;
+        top:3px;
+        right:6px;
+    }
+
+</style>
+<div class="customer_Prise" ng-app="myApp" ng-controller="myCtrl">
+    <div class="cus-img">
+        <img src="/images/customer/customer.gif" alt="">
+    </div>
+    <div class="cus-a">
+        <div ng-repeat="l in lei"><a ng-href="\{{l.href}}" ng-model="l.name" ng-click="qiehuan(l.name,$event)">\{{l.name}}</a></div>
+    </div>
+    <div class="hurt"><p style="font-size:19px;color: rgba(0,0,0,0.6);">\{{name}}</p></div>
+    <div ng-view></div>
+</div>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
+    <script>
+        var app = angular.module('myApp',['ngRoute']);
+        app.controller('myCtrl',function($scope,$rootElement) {
+            $scope.name='大众好评';
+            $scope.lei=[{name:'大众好评',href:'#!/'},{name:'微信好评',href:'#!/weixin'},{name:'微博好评',href:'#!/weibo'}];
+            $scope.qiehuan=function (name,$event) {
+             if($event.target){
+                 $scope.name=name;
+                 console.log($($event.target).parent());
+                 $($event.target).parent().css("border-bottom","2px solid #e4cfcf");
+                 $($event.target) .parent().siblings().css("border-bottom","none");
+             }else{
+                 $($event.target).parent().css( "border-bottom","none");
+             }
+            }
+
+//            大众
+            $scope.dazhong=[
+                {name:'孟mxx',head:'images/customer/h1.jpg',sheying:'非常好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0267感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha11.jpg'},{src:'images/customer/hunsha12.jpg'},{src:'images/customer/hunsha13.jpg'}],
+                    price:'5500元',time:'16-4-12 16:28'
+                },
+                {name:'安丹达',head:'images/customer/h2.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha21.jpg'},{src:'images/customer/hunsha22.jpg'},{src:'images/customer/hunsha23.jpg'},{src:'images/customer/hunsha24.jpg'}],
+                    price:'7500元',time:'16-10-1 16:28'
+                },
+                {name:'园园',head:'images/customer/h4.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha41.jpg'},{src:'images/customer/hunsha42.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                },
+                {name:'安安',head:'images/customer/h200.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha51.jpg'},{src:'images/customer/hunsha52.jpg'},{src:'images/customer/hunsha53.jpg'},{src:'images/customer/hunsha54.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                },
+                {name:'猪头',head:'images/customer/h201.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha200.jpg'},{src:'images/customer/hunsha202.jpg'},{src:'images/customer/hunsha203.jpg'},{src:'images/customer/hunsha54.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                }
+            ];
+            $scope.dazhong2=[
+                {name:'aaa',head:'images/customer/h200.jpg',sheying:'非常好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0267感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha200.jpg'},{src:'images/customer/hunsha201.jpg'},{src:'images/customer/hunsha202.jpg'}],
+                    price:'5500元',time:'16-4-12 16:28'
+                },
+                {name:'bbb',head:'images/customer/h201.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha203.jpg'},{src:'images/customer/hunsha204.jpg'},{src:'images/customer/hunsha205.jpg'},{src:'images/customer/hunsha206.jpg'}],
+                    price:'7500元',time:'16-10-1 16:28'
+                },
+                {name:'ccc',head:'images/customer/h202.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha207.jpg'},{src:'images/customer/hunsha208.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                },
+                {name:'ddd',head:'images/customer/h300.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha300.jpg'},{src:'images/customer/hunsha301.jpg'},{src:'images/customer/hunsha302.jpg'},{src:'images/customer/hunsha303.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                },
+                {name:'eee',head:'images/customer/h301.jpg',sheying:'很好',zaoxing:'非常好',fuwu:'非常好',coment:' 我的单号是W0123感谢化妆师楠楠，摄影师强子老师吗，灯光师林新还有勤劳的小秘书晓晓为我们忙前忙后、紧张辛苦了一整天（你们是可爱的小天使，我要为你们点赞），虽然只看到强子老师加班给秀出的几张片子，但是已经被老师们的精心服务感动到，拍摄结束后真心觉得他们太棒了，看我们整体的感觉会给我们推荐适合我们的风格，特别稀罕。特别感谢你们这个团队组合！！再次感谢你们，么么哒！强力推荐，拍的特别棒，而且所有都有自己的风格感觉',
+                    imglist:[{src:'images/customer/hunsha304.jpg'},{src:'images/customer/hunsha305.jpg'},{src:'images/customer/hunsha306.jpg'}],
+                    price:'7500元',time:'16-10-12 16:28'
+                }
+            ];
+//            微信
+            $scope.weixin=[
+                {src:'images/customer/weixin1.jpg'},
+                {src:'images/customer/weixin2.jpg'},
+                {src:'images/customer/weixin3.jpg'},
+                {src:'images/customer/weixin4.jpg'},
+                {src:'images/customer/weixin5.jpg'},
+            ];
+            //微博
+            $scope.weibo = [
+                {src:'images/customer/weibo1.jpg'}
+            ]
+            $scope.flag=true;//记录点击的情况
+            $scope.fbig=true;//记录大图片的点击情况
+            $scope.n=0;
+            $scope.m=0;
+            $scope.showBig=function ($event) {
+                $scope.n++;
+//                alert($scope.n);
+                $event.preventDefault();
+//                $rootElement.hide();
+                  $rootElement.parent().css({
+                    'background':'#f2e6e6'
+                })
+                //把当前点击的图片显示出来
+                $scope.img=document.createElement('img');
+                $scope.img.className='cur';
+                $scope.img.src=$event.target.src;
+//                console.log($(window).scrollTop());
+                $( $scope.img).css({top:$(window).scrollTop()+'px'});
+                $rootElement.append($scope.img);
+//                console.log($('.cur').click());
+                $('.cur').click(function(){
+                   $(this).remove();
+                    $rootElement.parent().css({
+                        'background':'none'
+                    })
+                })
+            }
+            $scope.showMore=function ($event) {
+                $scope.m++;
+                $('.more1').show();
+                console.log($event.target);
+                $($event.target).css({
+                    background:'silver',
+                    top:$scope.m*1660+'px',
+                    marginBottom:'20px',
+                });
+                $($event.target).html('我是有底线的..')
+            }
+        })
+        app.config(function ($routeProvider) {
+            $routeProvider.when('/',{
+                templateUrl:'/views/customer/index.html'
+            }).when('/weixin',{
+                templateUrl:'/views/customer/weixin.html'
+            }).when('/weibo',{
+                templateUrl:'/views/customer/weibo.html'
+            })
+        });
+    </script>

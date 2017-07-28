@@ -1,0 +1,20 @@
+<div class="comment" >
+    <style>
+        /**请求数据，评论***************************************************************/
+        .customer_Prise .comment{
+            border-left:3px solid #fdfdfd;
+            border-right:3px solid #fdfdfd;
+            width: 100%;
+            padding:2px 20px 0px 20px;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+    <div class="customer_Prise" ng-app="myApp" ng-controller="myCtrl">
+        <ul ng-repeat="wb in weibo">
+            <li><img ng-src="/{{wb.src}}" alt=""></li>
+
+        </ul>
+    </div>
+</div>

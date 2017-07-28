@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="/stylesheet/enjoy.css">
+<div class="container" style="width: 1004px;">
+    <div class="top">
+        <img src="/images/enjoy/1.gif" alt="">
+    </div>
+    <div class="center">
+        <span><div class="b1"><img src="/images/enjoy/2.png" class="can1">
+            <p><a href="javascript:;">婚纱客片</a></p></div>
+        </span>
+        <span><div class="b2"><img src="/images/enjoy/3.png" class="can2">
+            <p><a href="javascript:;">写真客片</a></p></div></span>
+    </div>
+    <div class="bottom">
+        <div class="image">
+            <img src="/images/enjoy/4.gif" id="enjoy">
+        </div>
+        <ul id="u3">
+            {{#each images}}
+                <li class="col-xs-4 col-sm-4 col-md-4">
+                    <div>
+                        <a href="/zhanshi?id={{id}}"><img src="{{src}}"></a>
+                    </div>
+                    <a href="/zhanshi?id={{id}}"><p><span>{{name}}</span></p></a>
+                </li>
+            {{/each}}
+        </ul>
+        <ul id="u4" style="display: none;">
+            {{#each photoAlbum}}
+                <li class="col-xs-4 col-sm-4 col-md-4">
+                    <div>
+                        <a href=""><img src="{{src}}"></a>
+                    </div>
+                    <a href=""> <p><span>{{name}}</span></p></a>
+                </li>
+            {{/each}}
+        </ul>
+        <ul id="u5" style="display: none;">
+            {{#each girlfriends}}
+                <li class="col-xs-4 col-sm-4 col-md-4">
+                    <div>
+                        <a href=""><img src="{{src}}"></a>
+                    </div>
+                    <a href=""> <p><span>{{name}}</span></p></a>
+                </li>
+            {{/each}}
+        </ul>
+        <ul id="u6" style="display: none;">
+            {{#each family}}
+                <li class="col-xs-4 col-sm-4 col-md-4">
+                    <div>
+                        <a href=""><img src="{{src}}"></a>
+                    </div>
+                    <a href=""> <p><span>{{name}}</span></p></a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+
+<script>
+    $('.b1').click(function(){
+        $('#enjoy').attr('src','/images/enjoy/4.gif');
+       dis( $('#u3'), $('#u4'), $('#u5'), $('#u6'));
+    });
+    $('.b2').click(function(){
+        $('#enjoy').attr('src','/images/enjoy/photo-album/1.gif');
+        dis( $('#u4'), $('#u3'), $('#u5'),$('#u6'));
+    });
+    $('.b3').click(function(){
+        $('#enjoy').attr('src','/images/enjoy/girlfriends/1.gif');
+        $('#u3').css('display','none');
+        $('#u4').css('display','block');
+        dis( $('#u5'), $('#u4'), $('#u3'),$('#u6'));
+    });
+    $('.b4').click(function(){
+        $('#enjoy').attr('src','/images/enjoy/family/1.gif');
+        $('#u3').css('display','none');
+        $('#u4').css('display','block');
+        dis( $('#u6'),$('#u5'), $('#u4'), $('#u3'));
+    });
+
+    function dis(can1,can2,can3,can4){
+        can1.css('display','block');
+        can2.css('display','none');
+        can3.css('display','none');
+        can4.css('display','none');
+    }
+    cha('#u3');
+    cha('#u4');
+    cha('#u5');
+    cha('#u6');
+    function cha(num){
+        $(num + ' li').each(function(){
+            $(this).mouseenter(function(){
+                $(num + ' li div').eq($(this).index()).velocity({'rotateZ':'-15deg'},500);
+            });
+            $(this).mouseleave(function(){
+                $(num + ' li div').eq($(this).index()).velocity({'rotateZ':'0deg'},500);
+            });
+        })
+    }
+
+    change('.can1');
+    change('.can2');
+
+    function change(can1){
+        $(can1).mouseenter(function(){
+            $(this).velocity({'rotateZ':'-15deg'},500);
+        });
+        $(can1).mouseleave(function(){
+            $(this).velocity({'rotateZ':'0deg'},500);
+        });
+    }
+
+
+
+</script>

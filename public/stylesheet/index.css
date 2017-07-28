@@ -1,0 +1,248 @@
+*{margin:0;padding:0;list-style-type:none;}
+section{
+    /*width: 100%;*/
+    height:auto;
+    /*background-color: pink;*/
+}
+.sectionTitle{
+    display: table;
+    margin:0 auto;
+}
+/*第一部分轮播*/
+section .cont>ul{
+    position: relative;
+    height: 550px !important;
+    overflow: hidden;
+}
+section .cont>ul li{
+    position: absolute;
+    display: none;
+}
+section .cont>ul li.act{
+    display: block;
+    text-align: center;
+}
+section .cont>ul img{
+    width: 100%;
+    height: 550px;
+}
+section .cont{
+    position: relative;
+}
+section .cont .bt{
+    position: absolute;
+    top: 50%;
+    z-index:999;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(222,222,222,.6);
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+    text-decoration: none;
+}
+section .cont a:hover{
+    text-decoration: none;
+}
+section .cont .bt-left{
+    left: 0;
+}
+section .cont .bt-right{
+    right: 0;
+}
+/*第二部分最新作品*/
+section .three-lunbo{
+    width: 1100px;
+    height: 440px;
+    margin:30px auto 0px;
+
+}
+section .three-lunbo #botton-scroll{
+    margin:10px auto;
+    width:940px;
+    height:364px;
+    overflow: hidden;
+    position: relative;
+}
+section .three-lunbo .featureul{
+    width: 4000px;
+    position: absolute;
+    left:0px;
+}
+section .three-lunbo .featureul li{
+    float: left;
+    margin-right:20px;
+}
+section .three-lunbo .featureul li .box{
+    width:300px;
+    height: 364px;
+    position: relative;
+}
+section .three-lunbo .arrow{
+    display: block;
+    width:25px;
+    height: 40px;
+    position: absolute;
+    top:150px;
+}
+section .three-lunbo .next{
+    right:0;
+}
+/*第三部分粉色大长条*/
+section .pink{
+    height:341px;
+    background: #fdf1f1;
+    text-align: center;
+    margin:30px auto 0px;
+}
+/*第四部分客片展示*/
+section .showpicture{
+    width: 1004px;
+    height:518px;
+    margin: 30px auto 0px;
+}
+
+section .showpicture .showpicture-body{
+    margin:40px auto 0px;
+}
+section .showpicture .showpicture-body ul>li{
+    height: 411px;
+    display: block;
+    width: 470px;
+}
+section .showpicture .showpicture-body ul>li:first-child{
+    float: left;
+}
+section .showpicture .showpicture-body ul>li:last-child{
+    float: right;
+}
+section .showpicture .showpicture-body ul>li>a{
+    display: block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+}
+section .showpicture .showpicture-body ul>li>a .suofang{
+    overflow: hidden;
+}
+section .showpicture .showpicture-body ul>li>a .suofang:hover img{
+    animation: mykeya 2s linear;
+}
+@keyframes mykeya{
+    from{transform: scale(1,1);}
+    to{transform: scale(1.5,1.5);}
+}
+section .showpicture .showpicture-body ul>li>a .logo{
+    display: block;
+    margin:20px auto 0px;
+}
+section .showpicture .showpicture-body ul>li>a span{
+    display: table;
+    border:1px solid #333;
+    margin: 10px auto 0px;
+    line-height:24px;
+    letter-spacing: 10px;
+    text-align: center;
+    color: black;
+    text-indent: 6px;
+}
+section .showpicture .showpicture-body ul>li>a span:hover{
+    background-color: lightgray;
+}
+/*第五部分大轮播*/
+section .second-lunbo{
+    margin:30px auto 0px;
+    width:100%;
+    height:550px;
+    background-color: blue;
+}
+/*第六部分环球拍*/
+section .global{
+    width:1004px;
+    height: 416px;
+    margin:20px auto 0px;
+    background-color: snow;
+}
+section .global .global-body{
+    margin-top: 20px;
+    height:360px;
+    /*background-color: pink;*/
+}
+section .global .global-body ul.xuanzhuan{
+    list-style-type:none;
+    width: 1028px;
+    height: 1004px;
+    margin:40px auto;
+}
+section .global .global-body .xuanzhuan li{
+    height: 300px;
+    width: 300px;
+    float: left;
+    position: relative;
+    margin-top:20px;
+    cursor: pointer;
+    margin-right:30px;
+}
+section .global .global-body .xuanzhuan li>div{
+    height: 300px;
+    width: 300px;
+    background: url('/images/works/ablmty.png') no-repeat;
+    margin-left:-16px;
+}
+section .global .global-body .xuanzhuan>li img{
+    margin-left:24px;
+    margin-top:23px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+section .global .global-body .xuanzhuan>li>p{
+    position: absolute;
+    width: 140px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    margin-left:-70px;
+    margin-top:-30px;
+    padding:5px;
+    background-color: rgba(222,222,222,0.9);
+}
+section .global .global-body .xuanzhuan>li>p>span{
+    display: block;
+    width: 130px;
+    height: 50px;
+    text-align:center;
+    line-height:50px;
+    border:1px solid #000;
+    font-size: 15px;
+}
+/*第七部分互动活动*/
+section .interact{
+    margin: 30px auto 0px;
+    height:500px;
+}
+section .interact .interact-body{
+    width: 100%;
+    height:320px;
+    background-color: #fdf1f1;
+    text-align: center;
+    margin-top:20px;
+    position: relative;
+}
+section .interact .interact-body div{
+    width: 330px;
+    height: 330px;
+    float: left;
+    /*background-color: pink;*/
+    position: absolute;
+    top:0px;
+}
+section .interact .interact-body .num1{
+    left:180px;
+}
+section .interact .interact-body .num2{
+    left:510px;
+}
+section .interact .interact-body .num3{
+    left:840px;
+}

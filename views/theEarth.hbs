@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="/stylesheet/enjoy.css">
+<style>
+   .container>div:nth-child(3){
+       height: 1400px;
+       position: relative;
+   }
+
+</style>
+<div class="container" style="width: 1004px;">
+        <div class="top" >
+            <img src="/images/the-earth/1.gif" alt="">
+        </div>
+        <div class="center">
+             <span><div class="a1"><img src="/images/enjoy/2.png" class="can1">
+                <p><a href="javascript:;">国内线</a></p></div >
+             </span>
+            <span><div class="a2"><img src="/images/enjoy/3.png" class="can2">
+                 <p><a href="javascript:;">海外线</a></p></div>
+            </span>
+        </div>
+        <div class="bottom">
+                <div class="image">
+                    <img src="/images/the-earth/2.gif" alt="" id="im1">
+                </div>
+                <ul id="u1">
+                    {{#each imagesIn}}
+                        <li class="col-xs-4 col-sm-4 col-md-4">
+                            <div>
+                                <a href=""><img src="{{src}}"></a>
+                            </div>
+                            <a href=""> <p><span>{{name}}</span></p></a>
+                        </li>
+                    {{/each}}
+                </ul>
+                <ul id="u2" style="display: none;">
+                    {{#each imagesOut}}
+                        <li class="col-xs-4 col-sm-4 col-md-4">
+                            <div>
+                                <a href=""><img src="{{src}}"></a>
+                            </div>
+                            <a href=""> <p><span>{{name}}</span></p></a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+    </div>
+
+<script>
+    $('.a1').click(function(){
+        $('#im1').attr('src','/images/the-earth/2.gif');
+        $('#u2').css('display','none');
+        $('#u1').css('display','block');
+    });
+    $('.a2').click(function(){
+        $('#im1').attr('src','/images/the-earth/3.gif');
+        $('#u1').css('display','none');
+        $('#u2').css('display','block');
+    });
+
+    cha('#u1');
+    cha('#u2');
+    function cha(num){
+        $(num + ' li').each(function(){
+            $(this).mouseenter(function(){
+                $(num + ' li div').eq($(this).index()).velocity({'rotateZ':'-15deg'},500);
+            });
+            $(this).mouseleave(function(){
+                $(num + ' li div').eq($(this).index()).velocity({'rotateZ':'0deg'},500);
+            });
+        })
+    }
+    change('.can1');
+    change('.can2');
+
+    function change(can1){
+        $(can1).mouseenter(function(){
+            $(this).velocity({'rotateZ':'-15deg'},500);
+        });
+        $(can1).mouseleave(function(){
+            $(this).velocity({'rotateZ':'0deg'},500);
+        });
+    }
+
+
+</script>
